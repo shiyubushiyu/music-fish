@@ -1,0 +1,7 @@
+{
+  "backgroundColor": "#000000",
+  "navigationBarTitleText": "推荐视频",
+  "usingComponents": {
+    "video-item": "/components/video-item/video-item"
+  }
+}

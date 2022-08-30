@@ -1,0 +1,31 @@
+<!-- pages/main-music/main-music.wxml -->
+<van-search value="{{ searchValue }}" shape="round" background="#73DBDE" placeholder-style="color:#4A8E90;" placeholder="请输入搜索关键词" bind:click-input="onSerachClick" />
+<!-- 轮播图的展示 -->
+<swiper class="banner" indicator-dots autoplay circular style="height: {{bannerHeight}}px;">
+  <block wx:for="{{ banners }}" wx:key="targetId">
+    <swiper-item class="item">
+      <image class="banner-image" mode="widthFix" src="{{ item.imageUrl }}" bindload="onBannerImageLoad"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 3推荐歌曲的展示 -->
+<view class="recommend">
+  <area-header title="推荐歌曲" bindmoreclick="onRecommendMoreClick" />
+  <view class="list">
+    <bolck wx:for="{{recommendSong}}" wx:key="id">
+      <song-item-v1 item-data="{{item}}" data-index="{{index}}" bindtap="onSongItemTap"></song-item-v1>
+    </bolck>
+  </view>
+</view>
+<!-- 4. 热门歌单 -->
+<menu-area title="热门歌单" menuList="{{hotMenuList}}" />
+<menu-area title="推荐歌单" menuList="{{recMenuList}}" />
+<!-- 5. 巅峰榜 -->
+<view class="renking">
+  <area-header title="巅峰榜" hasMore="{{false}}" />
+  <view class="ranking-list">
+    <block wx:for="{{rankingInfos}}" wx:key="id">
+      <ranking-item itemData="{{item}}" key="{{index}}" />
+    </block>
+  </view>
+</view>

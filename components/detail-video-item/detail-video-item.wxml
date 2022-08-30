@@ -1,0 +1,9 @@
+<!-- components/detail-video-item/detail-video-item.wxml -->
+<wxs src="/utils/format.wxs" module="fmt"></wxs>
+<view class="item">
+  <view class="album">
+    <image class="image" mode="widthFix" src="{{itemData.coverUrl}}"></image>
+    <view class="info">{{fmt.formatDuration(itemData.playTime)}}</view>
+  </view>
+  <view class="content">{{ itemData.title }}</view>
+</view>

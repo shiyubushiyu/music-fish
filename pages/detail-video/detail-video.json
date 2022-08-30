@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "detail-video-item": "/components/detail-video-item/detail-video-item"
+  },
+  "enablePullDownRefresh": false
+}

@@ -1,0 +1,14 @@
+/* pages/detail-menu/detail-menu.wxss */
+.all-menu {
+  padding: 0 24rpx;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.iten {
+  width: 48%;
+}

@@ -1,0 +1,39 @@
+/* components/menu-item/menu-item.wxss */
+.menu-item {
+  display: inline-block;
+  width: 100%;
+}
+
+.top {
+  position: relative;
+}
+
+.top .image {
+  width: 100%;
+  border-radius: 12rpx;
+  background-size: cover;
+}
+
+.top .count {
+  position: absolute;
+  bottom: 10rpx;
+  right: 0;
+  background-color: rgba(0, 0, 0, .5);
+  padding: 6rpx 10rpx;
+  font-size: 22rpx;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.menu-item .bottom {
+  width: 100%;
+  font-size: 26rpx;
+
+  /* 显示两行 */
+  /* white-space: normal; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

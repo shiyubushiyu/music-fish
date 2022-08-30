@@ -1,0 +1,16 @@
+/* pages/main-music/main-music.wxss */
+page {
+  box-sizing: border-box;
+  padding: 0 24rpx;
+  --search-background-color: #6ACACD;
+  --search-padding: 10px 0;
+}
+
+.banner {
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.banner .item .banner-image {
+  width: 100%;
+}
