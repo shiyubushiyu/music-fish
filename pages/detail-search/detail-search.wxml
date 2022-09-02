@@ -1,2 +1,6 @@
-<!--pages/detail-search/detail-search.wxml-->
-<text>pages/detail-search/detail-search.wxml</text>
+<van-search value="{{ searchValue }}" shape="round" background="#73DBDE" placeholder-style="color:#4A8E90;" show-action placeholder="请输入搜索关键词" bind:cancel="onCancel" bind:change="onSerachChange" />
+<view class="song-list">
+  <block wx:for="{{searchList}}" wx:key="id">
+    <song-item-v2 itemData="{{item}}" index="{{index+1}}" bindtap="onSongItemTap" />
+  </block>
+</view>

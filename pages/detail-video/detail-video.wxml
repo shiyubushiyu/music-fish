@@ -1,16 +1,2 @@
-<!-- pages/detail-video/detail-video.wxml -->
-<wxs src="/utils/format.wxs" module="fmt"></wxs>
-<view class="detail">
-  <video class="mv-video" src="{{MVData.url}}" autoplay loop danmu-list="{{danmuList}}" />
-  <scroll-view class="info" scroll-y>
-    <view class="content">
-      <view class="name">{{MVInfo.name}}</view>
-      <view class="artistName">{{MVInfo.artistName}}</view>
-      <view class="date">{{ fmt.formatCount(MVInfo.playCount) }} - {{ MVInfo.publishTime }}</view>
-      <view class="title">推荐视频</view>
-      <block wx:for="{{MVRelate}}" wx:key="index">
-        <detail-video-item class="item" data-item="{{item}}" item-data="{{item}}" />
-      </block>
-    </view>
-  </scroll-view>
-</view>
+<!--pages/detail-video/detail-video.wxml-->
+<text>pages/detail-video/detail-video.wxml</text>

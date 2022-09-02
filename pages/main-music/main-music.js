@@ -26,12 +26,16 @@ Page({
     recMenuList: [],
     // 巅峰榜数据
     rankingInfos: {},
+
+    // 当前正在播放的歌曲信息
+    currentSong: {},
+    isPlaying: false,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
+  onLoad() {
     this.fetchMusicBanner();
     // this.fetchRecommendSongs();
     this.fetchSongMenuList(); // 热门歌单
@@ -48,6 +52,8 @@ Page({
     recommendStore.dispatch("fethcRecommendSongsActions");
     // 获取顶峰榜
     rankingStore.dispatch("fetchRankingDataAction");
+
+    playerStore.onStates(["currentSong", "isPlaying"], this.handlePlayInfos);
 
     // 获取屏幕的尺寸
     this.setData({
@@ -105,17 +111,6 @@ Page({
     });
   },
 
-  /* 获取推荐歌单列表 */
-  // async fetchRecommendSongs() {
-  //   const res = await getPlayListDetail(3778678);
-  //   const playList = res.playlist;
-  //   const recommendSong = playList.tracks.slice(0, 6);
-  //   console.log(recommendSong);
-  //   this.setData({
-  //     recommendSong,
-  //   });
-  // },
-
   /* 获取热门歌单 */
   async fetchSongMenuList() {
     getSongMenuList().then((res) => {
@@ -162,6 +157,16 @@ Page({
     playerStore.setState("playSongList", this.data.recommendSong);
     playerStore.setState("playSongIndex", index);
   },
+  // 播放/暂停
+  onPlayOrPauseBtnTap() {
+    playerStore.dispatch("playMusicStatusAction");
+  },
+  // 播放歌曲点击进入播放页
+  onPlayBarAlbumTap() {
+    wx.navigateTo({
+      url: "/packagePlayer/pages/music-player/music-player",
+    });
+  },
   // ========================= 从store中获取数据 ======================
   handleRecommendSongs(value) {
     if (!value.tracks) return;
@@ -176,5 +181,13 @@ Page({
         rankingInfos: newRankingInfos,
       });
     };
+  },
+  handlePlayInfos({ currentSong, isPlaying }) {
+    if (currentSong) {
+      this.setData({ currentSong });
+    }
+    if (isPlaying !== undefined) {
+      this.setData({ isPlaying });
+    }
   },
 });

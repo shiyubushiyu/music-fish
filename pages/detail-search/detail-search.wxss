@@ -1,1 +1,4 @@
 /* pages/detail-search/detail-search.wxss */
+.song-list {
+  padding: 20rpx;
+}

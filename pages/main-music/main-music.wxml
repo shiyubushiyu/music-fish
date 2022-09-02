@@ -29,3 +29,15 @@
     </block>
   </view>
 </view>
+<!-- 6. 播放的工具栏 -->
+<view class="play-bar-placehorder" wx:if="{{currentSong.name || isPlaying}}"></view>
+<view class="play-bar" wx:if="{{currentSong.name || isPlaying}}">
+  <view class="left">
+    <image class="album album-anim" style="animation-play-state:{{isPlaying?'running':'paused'}}" src="{{currentSong.al.picUrl}}" bindtap="onPlayBarAlbumTap"></image>
+    <view class="name">{{currentSong.name}}</view>
+  </view>
+  <view class="right">
+    <image class="play" src="/assets/img/{{isPlaying?'暂停':'播放'}}-1.png" bindtap="onPlayOrPauseBtnTap"></image>
+    <image class="icon" src="/assets/img/音乐列表-1.png"></image>
+  </view>
+</view>

@@ -5,17 +5,5 @@
     "compileHotReLoad": false,
     "urlCheck": false
   },
-  "condition": {
-    "miniprogram": {
-      "list": [
-        {
-          "name": "",
-          "pathName": "pages/music-player/music-player",
-          "query": "id=1824045033",
-          "launchMode": "default",
-          "scene": null
-        }
-      ]
-    }
-  }
+  "condition": {}
 }

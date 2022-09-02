@@ -4,12 +4,24 @@
     "pages/main-music/main-music",
     "pages/main-video/main-video",
     "components/video-item/video-item",
-    "pages/detail-video/detail-video",
     "components/detail-video-item/detail-video-item",
     "pages/detail-search/detail-search",
     "pages/detail-song/detail-song",
-    "pages/detail-menu/detail-menu",
-    "pages/music-player/music-player"
+    "pages/detail-menu/detail-menu"
+  ],
+  "subpackages":[
+    {
+      "root": "packageVideo",
+      "pages": [
+        "pages/detail-video/detail-video"
+      ]
+    },
+    {
+      "root": "packagePlayer",
+      "pages": [
+        "pages/music-player/music-player"
+      ]
+    }
   ],
   "tabBar": {
     "backgroundColor": "#6AD6D8",

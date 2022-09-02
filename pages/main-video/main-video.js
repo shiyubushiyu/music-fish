@@ -110,7 +110,7 @@ Page({
     const id = evet.currentTarget.dataset.item.id;
     // 跳转页面
     wx.navigateTo({
-      url: `/pages/detail-video/detail-video?id=${id}`,
+      url: `/packageVideo/pages/detail-video/detail-video?id=${id}`,
     });
   },
 });

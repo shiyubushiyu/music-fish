@@ -1,4 +1,4 @@
-// pages/detail-video/detail-video.js
+// packageA/pages/cat.js
 Page({
 
   /**
